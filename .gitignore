@@ -158,9 +158,6 @@ $tf/
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
-*.obj 
-*.obj
-*.packages
 
 # TeamCity is a build add-in
 _TeamCity*
@@ -416,3 +413,10 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.dll
+vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.pdb
+vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.dll
+vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.pdb
+vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.dll
+vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.pdb
+vs_webapi/.vs/iBookStore/xs/UserPrefs.xml
