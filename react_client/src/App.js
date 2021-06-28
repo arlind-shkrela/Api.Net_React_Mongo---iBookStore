@@ -165,9 +165,9 @@ function App() {
       <List>{secondaryListItems}</List>
     </Drawer>
     <Dashboard />
-    <Box pt={4}>
+      <Box pt={4}>
             <Copyright />
-          </Box>
+        </Box>
     </div>
     
     // <Router>
