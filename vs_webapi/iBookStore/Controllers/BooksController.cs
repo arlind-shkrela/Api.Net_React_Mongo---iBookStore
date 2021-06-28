@@ -29,7 +29,7 @@ namespace iBookStore.Controllers
         {
             var book = _bookService.Get(id);
 
-            if (book == null)
+            if (book == null) //test
             {
                 return NotFound();
             }
