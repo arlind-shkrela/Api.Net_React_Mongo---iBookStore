@@ -41,8 +41,8 @@
 /Users/arlind/Documents/Repos/iBookStore/iBookStore/obj/Debug/net5.0/iBookStore.csproj.AssemblyReference.cache
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/appsettings.Development.json
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/appsettings.json
-/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/mono_crash.11a6748113.0.json
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/mono_crash.11a67480d0.0.json
+/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/mono_crash.11a6748113.0.json
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.deps.json
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.runtimeconfig.json
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.runtimeconfig.dev.json
@@ -65,7 +65,6 @@
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/runtimes/linux/native/libmongocrypt.so
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/runtimes/osx/native/libmongocrypt.dylib
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/bin/Debug/net5.0/runtimes/win/native/mongocrypt.dll
-/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.csproj.AssemblyReference.cache
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.GeneratedMSBuildEditorConfig.editorconfig
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.AssemblyInfoInputs.cache
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.AssemblyInfo.cs
