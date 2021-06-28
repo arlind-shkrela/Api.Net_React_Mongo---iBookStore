@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{317D688E-BFCA-459F-AF8A-5D7A2426C396}|Default">
+  <MonoDevelop.Ide.ItemProperties.iBookStore PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iBookStore/Controllers/BooksController.cs">
+    <Files>
+      <File FileName="iBookStore/Services/BookService.cs" Line="23" Column="1" />
+      <File FileName="iBookStore/Controllers/AuthorsController.cs" />
+      <File FileName="iBookStore/Controllers/BooksController.cs" Line="25" Column="1" />
+      <File FileName="iBookStore/Models/Book.cs" />
+      <File FileName="iBookStore/Services/AuthorService.cs" />
+      <File FileName="iBookStore/Startup.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="iBookStore" expanded="True">
+            <Node name="iBookStore" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="BooksController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
