@@ -19,6 +19,10 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './components/listItems';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
+import GetBooks from './components/GetBooks';
+import GetAuthors from './components/GetAuthors';
+import GetCustomers from './components/GetCustomers';
+
 
 
 function Copyright() {
@@ -164,22 +168,30 @@ function App() {
       <Divider />
       <List>{secondaryListItems}</List>
     </Drawer>
-    <Dashboard />
+      <Router>
+          <Route exact path="/">
+            <Dashboard />
+          </Route>
+          
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/books">
+            <GetBooks />
+          </Route>
+          <Route path="/authors">
+            <GetAuthors />
+          </Route>
+          <Route path="/customers">
+            <GetCustomers />
+          </Route>
+        </Router>
+{/* 
       <Box pt={4}>
             <Copyright />
-        </Box>
+        </Box> */}
+
     </div>
-    
-    // <Router>
-    // <div className="container">
-    //     <Navbar />
-    //     <br/>
-    //     <Route path="/" exact component={ExercisesList} />
-    //     <Route path="/edit/:id" component={EditExercise} />
-    //     <Route path="/create" component={CreateExercise} />
-    //     <Route path="/user" component={CreateUser} />
-    // </div>
-    // </Router>
   );
 }
 

@@ -9,39 +9,61 @@ import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import { Link } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 export const mainListItems = (
   <div>
+    <BrowserRouter>
+
+    <Link to="/">
     <ListItem button>
+
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+        <ListItemText primary="Dashboard" />
     </ListItem>
+
+      </Link>
+      <Link to='/books'>
+
     <ListItem button>
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
-      <ListItemText primary="Books" />
+         <ListItemText primary="Books" />
     </ListItem>
+
+    <Link to='/authors'>
+      </Link>
     <ListItem button>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
+      <ListItemText primary="Authors" />
+    </ListItem>
+    </Link>
+
+    <Link to='/customers'>
+    <ListItem button>
+      <ListItemIcon>
+        <LayersIcon />
+      </ListItemIcon>
       <ListItemText primary="Customers" />
     </ListItem>
+    </Link>
+    <Link to='/reports'>
     <ListItem button>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
       <ListItemText primary="Reports" />
     </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Integrations" />
-    </ListItem>
+    </Link>
+   
+  </BrowserRouter>
+
   </div>
 );
 
@@ -67,4 +89,5 @@ export const secondaryListItems = (
       <ListItemText primary="Year-end sale" />
     </ListItem>
   </div>
+
 );

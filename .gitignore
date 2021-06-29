@@ -416,3 +416,11 @@ FodyWeavers.xsd
 vs_webapi/iBookStore/bin/
 vs_webapi/iBookStore/obj/
 vs_webapi/.vs/
+vs_webapi/.vs/iBookStore/xs/UserPrefs.xml
+vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.dll
+.gitignore
+.gitignore
+vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.dll
+.gitignore
+vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.dll
+.gitignore
