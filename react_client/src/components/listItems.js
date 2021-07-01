@@ -14,35 +14,33 @@ import { BrowserRouter } from 'react-router-dom';
 
 export const mainListItems = (
   <div>
-    <BrowserRouter>
 
     <Link to="/">
-    <ListItem button>
+      <ListItem button>
 
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
         <ListItemText primary="Dashboard" />
-    </ListItem>
+      </ListItem>
+    </Link>
 
-      </Link>
-      <Link to='/books'>
-
-    <ListItem button>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-         <ListItemText primary="Books" />
-    </ListItem>
+    <Link to='/books'>
+      <ListItem button>
+        <ListItemIcon>
+            <ShoppingCartIcon />
+        </ListItemIcon>
+            <ListItemText primary="Books" />
+        </ListItem>
+    </Link>
 
     <Link to='/authors'>
-      </Link>
-    <ListItem button>
-      <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-      <ListItemText primary="Authors" />
-    </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <PeopleIcon />
+        </ListItemIcon>
+        <ListItemText primary="Authors" />
+      </ListItem>
     </Link>
 
     <Link to='/customers'>
@@ -53,6 +51,7 @@ export const mainListItems = (
       <ListItemText primary="Customers" />
     </ListItem>
     </Link>
+    
     <Link to='/reports'>
     <ListItem button>
       <ListItemIcon>
@@ -62,7 +61,6 @@ export const mainListItems = (
     </ListItem>
     </Link>
    
-  </BrowserRouter>
 
   </div>
 );

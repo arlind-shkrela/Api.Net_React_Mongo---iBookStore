@@ -19,7 +19,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './components/listItems';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
-import GetBooks from './components/GetBooks';
+import GetBooks from './components/Books/GetBooks';
 import GetAuthors from './components/GetAuthors';
 import GetCustomers from './components/GetCustomers';
 
@@ -128,7 +128,10 @@ function App() {
     setOpen(false);
   };
   return (
-    <div className={classes.root}>
+    <div>
+    <Router>
+
+<div className={classes.root}>
     <CssBaseline />
     <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
       <Toolbar className={classes.toolbar}>
@@ -163,35 +166,29 @@ function App() {
           <ChevronLeftIcon />
         </IconButton>
       </div>
-      <Divider />
       <List>{mainListItems}</List>
-      <Divider />
-      <List>{secondaryListItems}</List>
+      
+     <List>{secondaryListItems}</List>
     </Drawer>
-      <Router>
-          <Route exact path="/">
-            <Dashboard />
-          </Route>
-          
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/books">
-            <GetBooks />
-          </Route>
-          <Route path="/authors">
-            <GetAuthors />
-          </Route>
-          <Route path="/customers">
-            <GetCustomers />
-          </Route>
-        </Router>
-{/* 
-      <Box pt={4}>
-            <Copyright />
-        </Box> */}
+
+    <Divider />
+
+          <Route exact path="/" exact component={Dashboard} />   
+          <Route path="/dashboard" component={Dashboard} /> 
+          <Route path="/books" component={GetBooks} />
+          <Route path="/authors" component={GetAuthors} />
+          <Route path="/customers" component ={GetCustomers}/>
+      <Divider />
+
 
     </div>
+    </Router>
+
+<Box pt={4}>
+<Copyright />
+</Box>  
+</div>
+
   );
 }
 
