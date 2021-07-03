@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import BookDataService from "../../services/book.service";
+import AuthorDataService from "../../services/author.service";
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import VisibilityIcon from '@material-ui/icons/Visibility';
@@ -17,18 +17,6 @@ import Title from '../Title';
 import { Link } from "react-router-dom";
 import AddIcon from '@material-ui/icons/Add';
 
-
-// function createData(name, calories, fat, carbs, protein) {
-//   return { name, calories, fat, carbs, protein };
-// }
-
-// const books = [
-//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-//   createData('Eclair', 262, 16.0, 24, 6.0),
-//   createData('Cupcake', 305, 3.7, 67, 4.3),
-//   createData('Gingerbread', 356, 16.0, 49, 3.9),
-// ];
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     appBarSpacer: theme.mixins.toolbar,
@@ -75,15 +63,11 @@ const useStyles = makeStyles((theme) => ({
     actionButtons_delete : {
       color:"#ff005b",
     },
-    // icons_centered:{
-    //   position:"relative",
-    //   top:"3px"
-    // }
   }));
-export default function GetBooks() {
+export default function GetAuthors() {
   const classes = useStyles();
   const [page, setPage] = useState(1);
-  const [book, setbook] = useState([]);
+  const [author, setauthor] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const loadMoreCommit = () => {
@@ -92,11 +76,12 @@ export default function GetBooks() {
 
 
   useEffect(() => {
-      BookDataService.getAll()
-        // .then(res => res.json())
+      debugger;
+    AuthorDataService.getAll()
         .then(response => {
+            debugger;
             console.log(response.data);
-            setbook(response.data);
+            setauthor(response.data);
             setIsLoading(false);
         })
         .catch(error => console.log(error));
@@ -110,8 +95,8 @@ export default function GetBooks() {
       <Grid item xs={12} >
         <TableContainer component={Paper} className={classes.sm_padding}>
           <div className={classes.gridHeader}>
-            <Title>Lates Books
-            <Link to={"/books/add"} className={classes.actionButtons_create}>
+            <Title>Lates Authors
+            <Link to={"/authors/add"} className={classes.actionButtons_create}>
                 <AddIcon className={classes.icons_centered}></AddIcon>
             </Link>
             </Title>
@@ -120,31 +105,31 @@ export default function GetBooks() {
           <Table className={classes.table} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
-                <TableCell>Book Name</TableCell>
-                <TableCell align="right">Release Date</TableCell>
-                <TableCell align="right">Price</TableCell>
-                <TableCell align="right">Author</TableCell>
+                <TableCell>First Name</TableCell>
+                <TableCell align="right">Last Name</TableCell>
+                {/* <TableCell align="right">Price</TableCell>
+                <TableCell align="right">Author</TableCell> */}
                 <TableCell align="right"></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-                {book &&  book.map((book) => (
-                            <TableRow key={book.id}>
+                {author &&  author.map((author) => (
+                            <TableRow key={author.id}>
                               <TableCell component="th" scope="row">
-                                {book.bookName}
+                                {author.name}
                               </TableCell>
-                              <TableCell align="right">{book.releaseDate}</TableCell>
-                              <TableCell align="right">{book.price}</TableCell>
-                              <TableCell align="right">{book.author}</TableCell>
+                              <TableCell align="right">{author.surname}</TableCell>
+                              {/* <TableCell align="right">{author.price}</TableCell>
+                              <TableCell align="right">{author.author}</TableCell> */}
                               <TableCell align="right">
                               <li className={classes.actionButtons}>
-                                <Link to={"/books/view/"} className={classes.actionButtons_view}>
+                                <Link to={"/authors/view/"} className={classes.actionButtons_view}>
                                    <VisibilityIcon></VisibilityIcon>
                                 </Link>
-                                <Link to={"/books/edit"} className={classes.actionButtons_edit} >
+                                <Link to={"/authors/edit"} className={classes.actionButtons_edit} >
                                    <CreateIcon></CreateIcon>
                                 </Link>
-                                <Link to={"/books/delete"} className={classes.actionButtons_delete}>
+                                <Link to={"/authors/delete"} className={classes.actionButtons_delete}>
                                    <DeleteIcon></DeleteIcon>
                                 </Link>
                               </li>

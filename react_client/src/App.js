@@ -20,9 +20,13 @@ import { mainListItems, secondaryListItems } from './components/listItems';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import GetBooks from './components/Books/GetBooks';
-import GetAuthors from './components/GetAuthors';
+import GetAuthors from './components/Authors/GetAuthors';
 import GetCustomers from './components/GetCustomers';
 import CreateBook from './components/Books/CreateBook';
+import CreateAuthor from './components/Authors/CreateAuthor';
+import EditAuthor from './components/Authors/EditAuthor';
+import EditBook from './components/Books/EditBook';
+
 
 
 
@@ -173,16 +177,19 @@ function App() {
     </Drawer>
 
     <Divider />
-
-          <Route exact path="/" exact component={Dashboard} />   
+          <Route path="/" exact component={Dashboard} />   
           <Route path="/dashboard" exact component={Dashboard} /> 
           <Route path="/books" exact component={GetBooks} />
           <Route path="/books/add" exact component={CreateBook} />
+          <Route path="/books/edit/:id" exact component={EditBook} />
+
+
           <Route path="/authors" exact component={GetAuthors} />
+          <Route path="/authors/add" exact component={CreateAuthor} />
+          <Route path="/authors/edit/:id" exact component={EditAuthor} />
+
           <Route path="/customers" exact component ={GetCustomers}/>
-      <Divider />
-
-
+    <Divider />
     </div>
     </Router>
 

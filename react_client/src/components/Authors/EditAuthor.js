@@ -1,6 +1,6 @@
 import React from 'react'
 
-function GetAuthors() {
+function EditAuthor() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function GetAuthors() {
     )
 }
 
-export default GetAuthors
+export default EditAuthor
