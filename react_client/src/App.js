@@ -22,6 +22,7 @@ import Box from '@material-ui/core/Box';
 import GetBooks from './components/Books/GetBooks';
 import GetAuthors from './components/GetAuthors';
 import GetCustomers from './components/GetCustomers';
+import CreateBook from './components/Books/CreateBook';
 
 
 
@@ -174,10 +175,11 @@ function App() {
     <Divider />
 
           <Route exact path="/" exact component={Dashboard} />   
-          <Route path="/dashboard" component={Dashboard} /> 
-          <Route path="/books" component={GetBooks} />
-          <Route path="/authors" component={GetAuthors} />
-          <Route path="/customers" component ={GetCustomers}/>
+          <Route path="/dashboard" exact component={Dashboard} /> 
+          <Route path="/books" exact component={GetBooks} />
+          <Route path="/books/add" exact component={CreateBook} />
+          <Route path="/authors" exact component={GetAuthors} />
+          <Route path="/customers" exact component ={GetCustomers}/>
       <Divider />
 
 
