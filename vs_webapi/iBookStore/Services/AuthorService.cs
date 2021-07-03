@@ -19,25 +19,25 @@ namespace iBookStore.Services
         }
 
         public List<Author> Get() =>
-            _authors.Find(book => true).ToList();
+            _authors.AsQueryable().ToList();
 
         public Author Get(string id) =>
-            _authors.Find<Author>(book => book.Id == id).FirstOrDefault();
+            _authors.Find<Author>(author => author.Id == id).FirstOrDefault();
 
-        public Author Create(Author book)
+        public Author Create(Author author)
         {
-            _authors.InsertOne(book);
-            return book;
+            _authors.InsertOne(author);
+            return author;
         }
 
-        public void Update(string id, Author bookIn) =>
-            _authors.ReplaceOne(book => book.Id == id, bookIn);
+        public void Update(string id, Author authorIn) =>
+            _authors.ReplaceOne(author => author.Id == id, authorIn);
 
-        public void Remove(Book bookIn) =>
-            _authors.DeleteOne(book => book.Id == bookIn.Id);
+        public void Remove(Author authorIn) =>
+            _authors.DeleteOne(author => author.Id == authorIn.Id);
 
         public void Remove(string id) =>
-            _authors.DeleteOne(book => book.Id == id);
+            _authors.DeleteOne(author => author.Id == id);
     }
 
 }

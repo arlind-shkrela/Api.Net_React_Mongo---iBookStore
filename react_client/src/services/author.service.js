@@ -2,7 +2,6 @@ import http from "../http-common";
 
 class AuthorDataService {
   getAll() {
-    debugger;
     return http.get("/authors");
   }
 
@@ -10,12 +9,13 @@ class AuthorDataService {
     return http.get(`/authors/${id}`);
   }
 
-  create(data) {
-    return http.post("/authors", data);
+  create(author) {
+    debugger;
+    return http.post("/authors", author);
   }
 
-  update(id, data) {
-    return http.put(`/authors/${id}`, data);
+  update(id, author) {
+    return http.put(`/authors/${id}`, author);
   }
 
   delete(id) {
@@ -26,8 +26,8 @@ class AuthorDataService {
     return http.delete(`/authors`);
   }
 
-  findByName(title) {
-    return http.get(`/authors?title=${title}`);
+  findByName(name) {
+    return http.get(`/authors?name=${name}`);
   }
 }
 

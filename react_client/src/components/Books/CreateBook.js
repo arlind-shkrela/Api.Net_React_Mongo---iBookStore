@@ -46,22 +46,31 @@ function CreateBook() {
 
     })
 
-    const inputsHandler = (e) =>{
-        setInputField( {[e.target.name]: e.target.value} )
+    function handleChange(evt) {
+      const value = evt.target.value;
+      setInputField({
+        ...inputField,
+        [evt.target.name]: value
+      });
     }
 
-
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
-        debugger;
-        bookService.create()
-   
-       
-    }
-    const submitButton = () =>{
-        debugger;
-        bookService.create([inputField.bookName,inputField.releaseDate,inputField.price,inputField.description,inputField.author]);
-    }
+    const submitButton = (e) =>{
+      debugger;
+      var data = {
+        Name : inputField.firstName,
+        Surname: inputField.lastName
+      }
+      bookService.create(data)
+        .then(res => {
+          console.log(res);
+          console.log(res.data);
+        })
+        .catch(error => {
+          this.setState({ errorMessage: error.message });
+          console.error('There was an error!', error);
+      });
+     
+  }
 
 
 
@@ -76,12 +85,12 @@ function CreateBook() {
             <Title>Create Book</Title> 
           </div>
 
-    <form onSubmit={e => { handleSubmit(e) }}>
+    <form onSubmit={e => { submitButton(e) }}>
         <div className="mb-3 row">
           <label className="col-sm-2 col-form-label">Book Name:</label>
           <div className="col-sm-10">
             <input type="text" className="form-control"
-            onChange={inputsHandler} value={inputField.bookName} name="bookName" label="Book Name"/>
+            onChange={handleChange} value={inputField.bookName} name="bookName" label="Book Name"/>
         </div>
       </div>
 
@@ -90,7 +99,7 @@ function CreateBook() {
         <div className="col-sm-10">
             <input type="date" className="form-control" 
                 value={inputField.releaseDate}
-                onChange={inputsHandler} name="releaseDate"  label="Release Date"/>
+                onChange={handleChange} name="releaseDate"  label="Release Date"/>
         </div>
       </div>
 
@@ -99,7 +108,7 @@ function CreateBook() {
         <div className="col-sm-10">
         <input type="text" className="form-control"
             value={inputField.price}
-            onChange={inputsHandler}  name="price" label="Price"/>
+            onChange={handleChange}  name="price" label="Price"/>
         </div>
       </div>
       <div className="mb-3 row">
@@ -107,7 +116,7 @@ function CreateBook() {
         <div className="col-sm-10">
             <input type="text" className="form-control"
                 value={inputField.author}
-                onChange={inputsHandler} name="author" label="Author" />
+                onChange={handleChange} name="author" label="Author" />
         </div>
       </div>
       <div className="mb-3 row">
@@ -115,11 +124,12 @@ function CreateBook() {
         <div className="col-sm-10">
             <textarea className="form-control"
                 value={inputField.description}
-                onChange={inputsHandler} name="description" label="Description" />
+                onChange={handleChange} name="description" label="Description" />
         </div>
       </div>
       <div>
-    <input type="submit" value="Submit" ></input>
+        <a href="/books" className="btn btn-sm btn-secondary float-left">Go Back</a>
+        <input className="btn btn-sm btn-primary float-right" type="submit" value="Submit" ></input>
       </div>
     </form>
         </TableContainer>

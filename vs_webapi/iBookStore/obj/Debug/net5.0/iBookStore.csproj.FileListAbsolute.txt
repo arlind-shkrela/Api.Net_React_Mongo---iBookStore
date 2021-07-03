@@ -80,4 +80,3 @@
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/obj/Debug/net5.0/ref/iBookStore.dll
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.pdb
 /Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.genruntimeconfig.cache
-/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.csproj.AssemblyReference.cache

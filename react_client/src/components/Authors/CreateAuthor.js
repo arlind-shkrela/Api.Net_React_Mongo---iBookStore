@@ -42,20 +42,32 @@ function CreateAuthor() {
         lastName: ''
     })
 
-    const inputsHandler = (e) =>{
-        setInputField( {[e.target.name]: e.target.value} )
+    function handleChange(evt) {
+      const value = evt.target.value;
+      setInputField({
+        ...inputField,
+        [evt.target.name]: value
+      });
     }
 
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
+
+    const submitButton = (e) =>{
         debugger;
-        AuthorDataService.create();
-   
-       
-    }
-    const submitButton = () =>{
-        debugger;
-        AuthorDataService.create();
+        var data = {
+          Name : inputField.firstName,
+          Surname: inputField.lastName
+        }
+
+        AuthorDataService.create(data).then(res => {
+            console.log(res);
+            debugger;
+            window.location("/authors")
+            console.log(res.data);
+          })
+          .catch(error => {
+            this.setState({ errorMessage: error.message });
+            console.error('There was an error!', error);
+        });
        
     }
 
@@ -72,12 +84,12 @@ function CreateAuthor() {
             <Title>Create Author</Title> 
           </div>
 
-    <form onSubmit={e => { handleSubmit(e) }}>
+    <form onSubmit={e => { submitButton(e) }}>
         <div className="mb-3 row">
           <label className="col-sm-2 col-form-label">First Name:</label>
           <div className="col-sm-10">
             <input type="text" className="form-control"
-            onChange={inputsHandler} value={inputField.firstName} name="firstName" label="First Name"/>
+            onChange={handleChange} value={inputField.firstName} name="firstName" label="First Name"/>
         </div>
       </div>
 
@@ -86,11 +98,14 @@ function CreateAuthor() {
         <div className="col-sm-10">
         <input type="text" className="form-control"
             value={inputField.lastName}
-            onChange={inputsHandler}  name="lastName" label="Last Name"/>
+            onChange={handleChange}  name="lastName" label="Last Name"/>
         </div>
       </div>
       <div>
-    <input type="submit" value="Submit" ></input>
+      <div>
+        <a href="/authors" className="btn btn-sm btn-secondary float-left">Go Back</a>
+        <input className="btn btn-sm btn-primary float-right" type="submit" value="Submit" ></input>
+      </div>
       </div>
     </form>
         </TableContainer>

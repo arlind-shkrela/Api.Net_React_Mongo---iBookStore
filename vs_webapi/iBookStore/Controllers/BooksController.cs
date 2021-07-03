@@ -38,7 +38,7 @@ namespace iBookStore.Controllers
         }
 
         [HttpPost]
-        public ActionResult<BookService> Create(Book book)
+        public ActionResult<BookService> Create([FromBody]Book book)
         {
             _bookService.Create(book);
 

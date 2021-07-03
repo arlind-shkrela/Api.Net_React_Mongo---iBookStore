@@ -64,6 +64,9 @@ const useStyles = makeStyles((theme) => ({
       color:"#ff005b",
     },
   }));
+  
+
+
 export default function GetAuthors() {
   const classes = useStyles();
   const [page, setPage] = useState(1);
@@ -73,13 +76,15 @@ export default function GetAuthors() {
   const loadMoreCommit = () => {
     setPage(page + 1);
   };
-
+ 
+   function DeleteAuthor(e){
+    console.log(e);
+    AuthorDataService.delete(e);
+  }
 
   useEffect(() => {
-      debugger;
     AuthorDataService.getAll()
         .then(response => {
-            debugger;
             console.log(response.data);
             setauthor(response.data);
             setIsLoading(false);
@@ -129,8 +134,8 @@ export default function GetAuthors() {
                                 <Link to={"/authors/edit"} className={classes.actionButtons_edit} >
                                    <CreateIcon></CreateIcon>
                                 </Link>
-                                <Link to={"/authors/delete"} className={classes.actionButtons_delete}>
-                                   <DeleteIcon></DeleteIcon>
+                                <Link onClick={()=>DeleteAuthor(author.id)} className={classes.actionButtons_delete}>
+                                    <DeleteIcon></DeleteIcon>
                                 </Link>
                               </li>
                               </TableCell>

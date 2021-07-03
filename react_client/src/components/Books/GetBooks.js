@@ -93,7 +93,6 @@ export default function GetBooks() {
 
   useEffect(() => {
       BookDataService.getAll()
-        // .then(res => res.json())
         .then(response => {
             console.log(response.data);
             setbook(response.data);
