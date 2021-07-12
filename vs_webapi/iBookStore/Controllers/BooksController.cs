@@ -25,7 +25,7 @@ namespace iBookStore.Controllers
             _bookService.Get();
 
         [HttpGet("{id:length(24)}", Name = "GetBook")]
-        public ActionResult<Book> Get(string id)
+        public ActionResult<Book> Get([FromBody]string id)
         {
             var book = _bookService.Get(id);
 

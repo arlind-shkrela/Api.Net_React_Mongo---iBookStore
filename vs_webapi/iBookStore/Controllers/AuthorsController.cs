@@ -70,9 +70,18 @@ namespace iBookStore.Controllers
                 return NotFound();
             }
 
-            _authorService.Remove(author.Id);
+            try
+            {
+                _authorService.Remove(author.Id);
+                return Ok();
 
-            return NoContent();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
+
         }
     }
 }

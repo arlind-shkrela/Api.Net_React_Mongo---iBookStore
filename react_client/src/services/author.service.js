@@ -2,6 +2,7 @@ import http from "../http-common";
 
 class AuthorDataService {
   getAll() {
+    debugger;
     return http.get("/authors");
   }
 
@@ -10,7 +11,6 @@ class AuthorDataService {
   }
 
   create(author) {
-    debugger;
     return http.post("/authors", author);
   }
 

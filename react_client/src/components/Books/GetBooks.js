@@ -29,7 +29,7 @@ import AddIcon from '@material-ui/icons/Add';
 //   createData('Cupcake', 305, 3.7, 67, 4.3),
 //   createData('Gingerbread', 356, 16.0, 49, 3.9),
 // ];
-const drawerWidth = 240;
+// const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     appBarSpacer: theme.mixins.toolbar,
     content: {
@@ -101,6 +101,22 @@ export default function GetBooks() {
         .catch(error => console.log(error));
     }, [page]);
 
+
+    function DeleteBook(e){
+      debugger;
+      BookDataService.delete(e)
+      .then(response => {
+        handleRemoveSpecificRow(e);
+    })
+    .catch(error => console.log(error));;
+    
+    }
+    function handleRemoveSpecificRow(idx) {
+      const rows = [...book];
+      rows.splice(rows.findIndex(item => item.id === idx), 1);
+      setbook( rows );
+    }
+
   return (
     <main className={classes.content}>
      <div className={classes.appBarSpacer} />
@@ -143,7 +159,7 @@ export default function GetBooks() {
                                 <Link to={"/books/edit"} className={classes.actionButtons_edit} >
                                    <CreateIcon></CreateIcon>
                                 </Link>
-                                <Link to={"/books/delete"} className={classes.actionButtons_delete}>
+                                <Link onClick={()=>DeleteBook(book.id)}  className={classes.actionButtons_delete}>
                                    <DeleteIcon></DeleteIcon>
                                 </Link>
                               </li>

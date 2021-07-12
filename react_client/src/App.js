@@ -26,7 +26,7 @@ import CreateBook from './components/Books/CreateBook';
 import CreateAuthor from './components/Authors/CreateAuthor';
 import EditAuthor from './components/Authors/EditAuthor';
 import EditBook from './components/Books/EditBook';
-
+import ViewAuthor  from './components/Authors/ViewAuthor';
 
 
 
@@ -179,14 +179,15 @@ function App() {
     <Divider />
           <Route path="/" exact component={Dashboard} />   
           <Route path="/dashboard" exact component={Dashboard} /> 
+          
           <Route path="/books" exact component={GetBooks} />
           <Route path="/books/add" exact component={CreateBook} />
           <Route path="/books/edit/:id" exact component={EditBook} />
 
-
           <Route path="/authors" exact component={GetAuthors} />
           <Route path="/authors/add" exact component={CreateAuthor} />
           <Route path="/authors/edit/:id" exact component={EditAuthor} />
+          <Route path="/authors/view/:id" exact component={ViewAuthor} />
 
           <Route path="/customers" exact component ={GetCustomers}/>
     <Divider />

@@ -16,6 +16,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Title from '../Title';
 import { Link } from "react-router-dom";
 import AddIcon from '@material-ui/icons/Add';
+import EditAuthor from './EditAuthor';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -78,8 +79,17 @@ export default function GetAuthors() {
   };
  
    function DeleteAuthor(e){
-    console.log(e);
-    AuthorDataService.delete(e);
+    AuthorDataService.delete(e)
+    .then(response => {
+      handleRemoveSpecificRow(e);
+  })
+  .catch(error => console.log(error));;
+  
+  }
+  function handleRemoveSpecificRow(idx) {
+    const rows = [...author];
+    rows.splice(rows.findIndex(item => item.id === idx), 1)
+    setauthor( rows )
   }
 
   useEffect(() => {
@@ -128,13 +138,13 @@ export default function GetAuthors() {
                               <TableCell align="right">{author.author}</TableCell> */}
                               <TableCell align="right">
                               <li className={classes.actionButtons}>
-                                <Link to={"/authors/view/"} className={classes.actionButtons_view}>
+                                <Link to={{pathname:"/authors/view/"+author.id, state:{id:author.id}}} className={classes.actionButtons_view}>
                                    <VisibilityIcon></VisibilityIcon>
                                 </Link>
-                                <Link to={"/authors/edit"} className={classes.actionButtons_edit} >
+                                <Link to={ {pathname: "/authors/edit/"+author.id, state:{id:author.id}}} className={classes.actionButtons_edit} >
                                    <CreateIcon></CreateIcon>
                                 </Link>
-                                <Link onClick={()=>DeleteAuthor(author.id)} className={classes.actionButtons_delete}>
+                                <Link to={"/authors"} onClick={()=>DeleteAuthor(author.id)} className={classes.actionButtons_delete}>
                                     <DeleteIcon></DeleteIcon>
                                 </Link>
                               </li>

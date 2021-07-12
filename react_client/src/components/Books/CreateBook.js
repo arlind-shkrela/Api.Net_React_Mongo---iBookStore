@@ -57,8 +57,12 @@ function CreateBook() {
     const submitButton = (e) =>{
       debugger;
       var data = {
-        Name : inputField.firstName,
-        Surname: inputField.lastName
+        BookName : inputField.bookName,
+        ReleaseDate: inputField.releaseDate,
+        Price: inputField.price,
+        Description: inputField.description,
+        Author: inputField.author,
+
       }
       bookService.create(data)
         .then(res => {
