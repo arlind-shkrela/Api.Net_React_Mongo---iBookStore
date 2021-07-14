@@ -429,3 +429,8 @@ vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.pdb
 .gitignore
 .gitignore
 vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.dll
+react_client/src/App.js
+vs_webapi/iBookStore/bin/Debug/net5.0/iBookStore.pdb
+vs_webapi/iBookStore/bin/Debug/net5.0/ref/iBookStore.dll
+.gitignore
+vs_webapi/iBookStore/obj/Debug/net5.0/iBookStore.pdb

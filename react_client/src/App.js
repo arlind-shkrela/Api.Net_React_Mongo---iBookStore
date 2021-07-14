@@ -27,6 +27,7 @@ import CreateAuthor from './components/Authors/CreateAuthor';
 import EditAuthor from './components/Authors/EditAuthor';
 import EditBook from './components/Books/EditBook';
 import ViewAuthor  from './components/Authors/ViewAuthor';
+import ViewBook from './components/Books/ViewBook';
 
 
 
@@ -183,6 +184,8 @@ function App() {
           <Route path="/books" exact component={GetBooks} />
           <Route path="/books/add" exact component={CreateBook} />
           <Route path="/books/edit/:id" exact component={EditBook} />
+          <Route path="/books/view/:id" exact component={ViewBook} />
+
 
           <Route path="/authors" exact component={GetAuthors} />
           <Route path="/authors/add" exact component={CreateAuthor} />

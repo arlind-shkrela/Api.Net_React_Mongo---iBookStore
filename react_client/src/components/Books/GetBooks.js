@@ -153,10 +153,10 @@ export default function GetBooks() {
                               <TableCell align="right">{book.author}</TableCell>
                               <TableCell align="right">
                               <li className={classes.actionButtons}>
-                                <Link to={"/books/view/"} className={classes.actionButtons_view}>
+                                <Link to={{pathname: "/books/view/"+book.id, state:{id:book.id} }} className={classes.actionButtons_view}>
                                    <VisibilityIcon></VisibilityIcon>
                                 </Link>
-                                <Link to={"/books/edit"} className={classes.actionButtons_edit} >
+                                <Link to={{pathname:"/books/edit/" + book.id, state:{id:book.id}}} className={classes.actionButtons_edit} >
                                    <CreateIcon></CreateIcon>
                                 </Link>
                                 <Link onClick={()=>DeleteBook(book.id)}  className={classes.actionButtons_delete}>

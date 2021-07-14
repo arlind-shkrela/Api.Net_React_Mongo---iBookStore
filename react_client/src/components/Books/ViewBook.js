@@ -34,8 +34,7 @@ const useStyles = makeStyles((theme) => ({
       display:"inline-block"
     },
   }));
-
-function EditBook(props) {
+function ViewBook(props) {
     const classes = useStyles();
     const [inputField , setInputField] = useState({
         bookName: '',
@@ -65,29 +64,6 @@ function EditBook(props) {
       });
     }
 
-    const submitButton = (e) =>{
-      debugger;
-      var data = {
-        BookName : inputField.bookName,
-        ReleaseDate: inputField.releaseDate,
-        Price: inputField.price,
-        Description: inputField.description,
-        Author: inputField.author,
-
-      }
-      bookService.create(data)
-        .then(res => {
-          console.log(res);
-          console.log(res.data);
-        })
-        .catch(error => {
-          this.setState({ errorMessage: error.message });
-          console.error('There was an error!', error);
-      });
-     
-  }
-
-
 
     return (
         <main className={classes.content}>
@@ -97,56 +73,40 @@ function EditBook(props) {
       <Grid item xs={12} >
         <TableContainer component={Paper} className={classes.sm_padding}>
           <div className={classes.gridHeader}>
-            <Title>Create Book</Title> 
+            <Title>View Book</Title> 
           </div>
 
-    <form onSubmit={e => { submitButton(e) }}>
         <div className="mb-3 row">
           <label className="col-sm-2 col-form-label">Book Name:</label>
-          <div className="col-sm-10">
-            <input type="text" className="form-control"
-            onChange={handleChange} value={inputField.bookName} name="bookName" label="Book Name"/>
+          <div className="col-sm-10"> {inputField.bookName}
         </div>
       </div>
 
       <div className="mb-3 row">
         <label className="col-sm-2 col-form-label">Release Date:</label>
-        <div className="col-sm-10">
-            <input type="date" className="form-control" 
-                value={inputField.releaseDate}
-                onChange={handleChange} name="releaseDate"  label="Release Date"/>
+        <div className="col-sm-10">{inputField.releaseDate}
         </div>
       </div>
 
       <div className="mb-3 row">
         <label className="col-sm-2 col-form-label">Price:</label>
-        <div className="col-sm-10">
-        <input type="text" className="form-control"
-            value={inputField.price}
-            onChange={handleChange}  name="price" label="Price"/>
+        <div className="col-sm-10">{inputField.price}
         </div>
       </div>
       <div className="mb-3 row">
         <label className="col-sm-2 col-form-label">Author:</label>
         <div className="col-sm-10">
-            <input type="text" className="form-control"
-                value={inputField.author}
-                onChange={handleChange} name="author" label="Author" />
+        {inputField.author}
         </div>
       </div>
       <div className="mb-3 row">
         <label className="col-sm-2 col-form-label">Description:</label>
-        <div className="col-sm-10">
-            <textarea className="form-control"
-                value={inputField.description}
-                onChange={handleChange} name="description" label="Description" />
+        <div className="col-sm-10"> {inputField.description}
         </div>
       </div>
       <div>
         <a href="/books" className="btn btn-sm btn-secondary float-left">Go Back</a>
-        <input className="btn btn-sm btn-primary float-right" type="submit" value="Submit" ></input>
       </div>
-    </form>
         </TableContainer>
         </Grid>
     </Grid>
@@ -156,4 +116,4 @@ function EditBook(props) {
     )
 }
 
-export default EditBook
+export default ViewBook
