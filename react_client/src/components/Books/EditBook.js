@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 function EditBook(props) {
     const classes = useStyles();
+    const [loading, setLoading] = useState(false);
     const [inputField , setInputField] = useState({
         bookName: '',
         releaseDate: '',
@@ -48,13 +49,21 @@ function EditBook(props) {
 
   
     useEffect(() => {
-        const id = props.match.params.id;
-        bookService.get(id)
-        .then(response => {
-          setInputField(response.data);
-          },[])
-         .catch(error => console.log(error));
+      fetchData();
     });
+
+    const fetchData = () => {
+      setLoading(true);
+      const id = props.match.params.id;
+      bookService.get(id)
+      .then(response => {
+        setInputField(response.data);
+        })
+       .catch(error => {
+         console.log(error);
+         setLoading(false);
+       });
+    };
 
 
     function handleChange(evt) {

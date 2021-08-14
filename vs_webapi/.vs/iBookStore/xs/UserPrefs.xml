@@ -3,8 +3,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="iBookStore/Controllers/AuthorsController.cs">
     <Files>
       <File FileName="iBookStore/Services/BookService.cs" Line="27" Column="1" />
-      <File FileName="iBookStore/Controllers/AuthorsController.cs" Line="27" Column="57" />
-      <File FileName="iBookStore/Controllers/BooksController.cs" />
+      <File FileName="iBookStore/Controllers/AuthorsController.cs" Line="29" Column="1" />
+      <File FileName="iBookStore/Controllers/BooksController.cs" Line="32" Column="37" />
       <File FileName="iBookStore/Models/Book.cs" />
       <File FileName="iBookStore/Services/AuthorService.cs" />
       <File FileName="iBookStore/Startup.cs" />
@@ -31,7 +31,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/Controllers/BooksController.cs" relfile="iBookStore/Controllers/BooksController.cs" line="29" column="1" />
+      <Breakpoint file="/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/Controllers/AuthorsController.cs" relfile="iBookStore/Controllers/AuthorsController.cs" line="25" column="1" />
+      <Breakpoint file="/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/Controllers/AuthorsController.cs" relfile="iBookStore/Controllers/AuthorsController.cs" line="29" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
