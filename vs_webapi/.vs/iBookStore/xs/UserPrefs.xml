@@ -4,7 +4,7 @@
     <Files>
       <File FileName="iBookStore/Services/BookService.cs" Line="27" Column="1" />
       <File FileName="iBookStore/Controllers/AuthorsController.cs" Line="29" Column="1" />
-      <File FileName="iBookStore/Controllers/BooksController.cs" Line="32" Column="37" />
+      <File FileName="iBookStore/Controllers/BooksController.cs" />
       <File FileName="iBookStore/Models/Book.cs" />
       <File FileName="iBookStore/Services/AuthorService.cs" />
       <File FileName="iBookStore/Startup.cs" />

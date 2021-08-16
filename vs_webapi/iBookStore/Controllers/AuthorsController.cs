@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using iBookStore.Models;
 using iBookStore.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace iBookStore.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     public class AuthorsController : Controller
     {
         private readonly AuthorService _authorService;
@@ -46,7 +48,7 @@ namespace iBookStore.Controllers
         }
 
         [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, Author authorId)
+        public IActionResult Update(string id, [FromBody] Author authorId)
         {
             var author = _authorService.Get(id);
 
@@ -54,7 +56,7 @@ namespace iBookStore.Controllers
             {
                 return NotFound();
             }
-
+            authorId.Id = author.Id;
             _authorService.Update(id, authorId);
 
             return NoContent();

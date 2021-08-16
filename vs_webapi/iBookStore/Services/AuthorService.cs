@@ -26,10 +26,10 @@ namespace iBookStore.Services
 
         public Author Create(Author author)
         {
-            _authors.InsertOne(author);
+            _authors.InsertOne(author); 
             return author;
         }
-
+                    
         public void Update(string id, Author authorIn) =>
             _authors.ReplaceOne(author => author.Id == id, authorIn);
 
