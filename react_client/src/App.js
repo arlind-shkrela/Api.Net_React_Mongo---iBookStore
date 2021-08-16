@@ -21,13 +21,15 @@ import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import GetBooks from './components/Books/GetBooks';
 import GetAuthors from './components/Authors/GetAuthors';
-import GetCustomers from './components/GetCustomers';
+import GetCustomers from './components/Customers/GetCustomer'
 import CreateBook from './components/Books/CreateBook';
 import CreateAuthor from './components/Authors/CreateAuthor';
 import EditAuthor from './components/Authors/EditAuthor';
 import EditBook from './components/Books/EditBook';
 import ViewAuthor  from './components/Authors/ViewAuthor';
 import ViewBook from './components/Books/ViewBook';
+import CreateCustomer from './components/Customers/CreateCustomer';
+import EditCustomer from './components/Customers/EditCustomer';
 
 
 
@@ -192,7 +194,12 @@ function App() {
           <Route path="/authors/edit/:id" exact component={EditAuthor} />
           <Route path="/authors/view/:id" exact component={ViewAuthor} />
 
-          <Route path="/customers" exact component ={GetCustomers}/>
+          <Route path="/customers" exact component={GetCustomers} />
+          <Route path="/customers/add" exact component={CreateCustomer} />
+          <Route path="/customers/edit/:id" exact component={EditCustomer} />
+
+    
+
     <Divider />
     </div>
     </Router>
