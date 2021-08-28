@@ -2,14 +2,17 @@
   <MonoDevelop.Ide.ItemProperties.iBookStore PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="iBookStore/Controllers/AuthorsController.cs">
     <Files>
-      <File FileName="iBookStore/Services/BookService.cs" Line="27" Column="1" />
-      <File FileName="iBookStore/Controllers/AuthorsController.cs" Line="29" Column="1" />
-      <File FileName="iBookStore/Controllers/BooksController.cs" />
+      <File FileName="iBookStore/Services/BookService.cs" Line="8" Column="18" />
+      <File FileName="iBookStore/Controllers/AuthorsController.cs" Line="27" Column="1" />
+      <File FileName="iBookStore/Controllers/BooksController.cs" Line="27" Column="1" />
       <File FileName="iBookStore/Models/Book.cs" />
       <File FileName="iBookStore/Services/AuthorService.cs" />
       <File FileName="iBookStore/Startup.cs" />
       <File FileName="iBookStore/Models/Author.cs" />
-      <File FileName="iBookStore/Program.cs" />
+      <File FileName="iBookStore/Program.cs" Line="16" Column="1" />
+      <File FileName="iBookStore/appsettings.json" />
+      <File FileName="iBookStore/appsettings.Development.json" />
+      <File FileName="iBookStore/Properties/launchSettings.json" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +23,8 @@
                 <Node name="AuthorsController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -31,8 +35,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/Controllers/AuthorsController.cs" relfile="iBookStore/Controllers/AuthorsController.cs" line="25" column="1" />
-      <Breakpoint file="/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/Controllers/AuthorsController.cs" relfile="iBookStore/Controllers/AuthorsController.cs" line="29" column="1" />
+      <Breakpoint file="/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/Controllers/AuthorsController.cs" relfile="iBookStore/Controllers/AuthorsController.cs" line="67" column="1" />
+      <Breakpoint file="/Users/arlind/Documents/Repos/iBookStore/vs_webapi/iBookStore/Controllers/AuthorsController.cs" relfile="iBookStore/Controllers/AuthorsController.cs" line="52" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

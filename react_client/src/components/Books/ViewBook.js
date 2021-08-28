@@ -84,7 +84,7 @@ function ViewBook(props) {
 
       <div className="mb-3 row">
         <label className="col-sm-2 col-form-label">Release Date:</label>
-        <div className="col-sm-10">{inputField.releaseDate}
+        <div className="col-sm-10">{new DateTime(inputField.releaseDate)}
         </div>
       </div>
 

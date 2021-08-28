@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace iBookStore.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class AuthorsController : Controller
     {
         private readonly AuthorService _authorService;

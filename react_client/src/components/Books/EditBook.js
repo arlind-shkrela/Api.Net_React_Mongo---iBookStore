@@ -50,7 +50,7 @@ function EditBook(props) {
   
     useEffect(() => {
       fetchData();
-    });
+    },[]);
 
     const fetchData = () => {
       setLoading(true);
